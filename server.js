@@ -1,6 +1,6 @@
 const express = require('express');
 var app = express();
-const puerto = 3000;
+const puerto = process.env.port || 3000;
 
 // middleware define una función para ser ejecutada al llamar cualquier ruta del sitio desde el navegador, o en las que sea directamente especificado
 const middleware = require('./middleware.js');
