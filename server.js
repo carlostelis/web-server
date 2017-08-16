@@ -3,16 +3,7 @@ var app = express();
 const puerto = 3000;
 
 // middleware define una función para ser ejecutada al llamar cualquier ruta del sitio desde el navegador, o en las que sea directamente especificado
-var middleware = {
-    requireAuthentication: function(req, res, next) {
-        console.log('private route hit');
-        next();
-    },
-    logger: function(req, res, next) {
-        console.log(`${new Date().toString()}: ${req.method} on ${req.url}`);
-        next();
-    }
-};
+const middleware = require('./middleware.js');
 
 
 // Es importante poner el middleware antes de la app, de lo contrario no se ejecutará
